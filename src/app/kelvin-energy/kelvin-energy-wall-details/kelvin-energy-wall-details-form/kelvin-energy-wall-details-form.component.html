@@ -1,0 +1,20 @@
+<form *ngFor = "let wall of wallTypesInput; let i = index">
+	<md-select mdTooltip = "Select the wall types on this storey" mdTooltipShowDelay = "500" placeholder="Wall type" [(ngModel)]="wallTypesInput[i]" class = "wallTypeSelector" name = "wallType{{i}}">
+		<md-option *ngFor="let wallType of wallTypes;" [value]="wallType.value">
+		      	{{wallType.viewValue}}
+		</md-option>
+	</md-select>
+	<md-checkbox [(ngModel)]="wallFoilInput[i]" name = "wallFoilInputCheckbox{{i}}">Reflective foil</md-checkbox>
+	
+	<button md-mini-fab color = "warn" mdTooltip = "Delete this wall type" mdTooltipShowDelay = "500"  (click) = "deleteWallType(i)" class="deleteWallTyeButton">
+		<md-icon>delete</md-icon>
+	</button>
+	
+</form>
+	<button md-raised-button mdTooltip = "Does this storey have multiple wall types? Use this!" mdTooltipShowDelay = "500" color="primary" (click) = "addWallType()">Add wall types
+	</button> 
+
+<!--TODO
+Need logic in here to determine whether other concessions are available.
+
+-->

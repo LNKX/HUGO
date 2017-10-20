@@ -1,0 +1,3 @@
+Save button needs to close tray, export variables for updating. 
+
+check floorType/s on floor details html. Its different syntax to whats on the ngfor above it. Could that have been the problem?

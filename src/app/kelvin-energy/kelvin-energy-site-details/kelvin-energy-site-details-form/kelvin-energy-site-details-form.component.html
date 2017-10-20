@@ -1,0 +1,56 @@
+<!--Site Details Form HTML-->
+<form class="site-details-form">
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><md-form-field class="example-full-width">
+      <input mdInput placeholder="Client name">
+    </md-form-field></td>
+  </tr></table>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="State">
+      </md-form-field>
+    </td>
+
+    <td>
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="Local Government Authority">
+      </md-form-field>
+    </td>
+  </tr>
+</table>
+
+<table class="example-full-width" cellspacing="0"><tr>
+    <td><md-form-field class="example-full-width">
+      <input mdInput placeholder="Street Address">
+    </md-form-field></td>
+    
+  </tr></table>
+
+<table class="example-full-width" cellspacing="0"><tr>
+    <td><md-form-field class="example-full-width">
+      <input mdInput placeholder="Suburb">
+    </md-form-field></td>
+ 
+<td><md-form-field class="example-full-width">
+    <input mdInput #postalCode maxlength="4" placeholder="Post code">
+    <md-hint align="end">{{postalCode.value.length}} / 4</md-hint>
+   </md-form-field></td> </tr></table>
+
+</form>
+<div class="done-button">
+<button md-raised-button color="primary">
+    <md-icon>save</md-icon>
+     Save
+</button> 
+</div>
+
+<!--Future Work 
+     1- Autocomplete states, make selectable
+     2- Persist data, store via Save icon - save to account, not locally. 
+     3- Extension vs New work functionality, perhaps to dictate how information is later displayed
+     4- Make a Residential / Commercial slide toggle to expand functionality to NCC Vol 1
+-->
+

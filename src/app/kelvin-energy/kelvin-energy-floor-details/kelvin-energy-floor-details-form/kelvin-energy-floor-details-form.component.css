@@ -1,0 +1,21 @@
+.save-button{
+	margin: 10px;
+	border-top: 10px;
+	padding-top: 10px;
+
+}
+
+.typeSelector{
+
+	width:12%;
+}
+.floorDetailsForm{
+	margin: 10px;
+	border-top: 10px;
+	padding-top: 10px;
+}
+
+.done-button {
+	float:right;
+}
+
