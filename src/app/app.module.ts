@@ -16,6 +16,7 @@ import { KelvinEnergySiteDetailsFormComponent } from './kelvin-energy/kelvin-ene
 import { KelvinEnergyFloorDetailsFormComponent } from './kelvin-energy/kelvin-energy-floor-details/kelvin-energy-floor-details-form/kelvin-energy-floor-details-form.component';
 import { KelvinEnergyRoofAndCeilingDetailsFormComponent } from './kelvin-energy/kelvin-energy-roof-and-ceiling-details/kelvin-energy-roof-and-ceiling-details-form/kelvin-energy-roof-and-ceiling-details-form.component';
 import { KelvinEnergyWallDetailsFormComponent } from './kelvin-energy/kelvin-energy-wall-details/kelvin-energy-wall-details-form/kelvin-energy-wall-details-form.component';
+import { KelvinEnergyGlazingDetailsFormComponent } from './kelvin-energy/kelvin-energy-glazing-details/kelvin-energy-glazing-details-form/kelvin-energy-glazing-details-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { KelvinEnergyWallDetailsFormComponent } from './kelvin-energy/kelvin-ene
     KelvinEnergyFloorDetailsFormComponent,
     KelvinEnergyRoofAndCeilingDetailsFormComponent,
     KelvinEnergyWallDetailsFormComponent,
+    KelvinEnergyGlazingDetailsFormComponent,
 
     
   ],

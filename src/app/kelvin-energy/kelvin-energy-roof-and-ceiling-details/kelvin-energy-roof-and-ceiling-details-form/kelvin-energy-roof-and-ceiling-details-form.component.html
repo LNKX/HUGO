@@ -1,3 +1,50 @@
-<p>
-  kelvin-energy-roof-and-ceiling-details-form works!
-</p>
+<form *ngFor = "let storey of storeyRoofAndCeilingData; let i = index;">
+    <md-select placeholder="Roof cladding" name ="roofCladdingTypeSelector{{i}}" [(ngModel)]="storeyRoofAndCeilingData[i].roofCladding" class = "typeSelector">
+        <md-option *ngFor="let roofCladdingType of roofCladdingTypes" [value]="roofCladdingType.value">
+            {{roofCladdingType.viewValue}}
+        </md-option>
+     </md-select>
+
+     <md-select mdTooltip = "Select the roof colour for this roof" mdTooltipShowDelay = "500" placeholder="Roof colour" [(ngModel)]="storeyRoofAndCeilingData[i].roofColour" class = "typeSelector" name = "roofColor{{i}}">
+		    <md-option *ngFor="let roofColour of roofColours;" [value]="roofColour.value">
+		      	{{roofColour.viewValue}}
+		    </md-option>
+	 </md-select>
+
+     <md-select mdTooltip = "Select the type of roof insulation" mdTooltipShowDelay = "500" placeholder=" Roof insulation" [(ngModel)]="storeyRoofAndCeilingData[i].roofInsulation" class = "typeSelector" name = "roofInsulationType{{i}}">
+		    <md-option *ngFor="let roofInsulationType of roofInsulationTypes;" [value]="roofInsulationType.value">
+		      	{{roofInsulationType.viewValue}}
+		    </md-option>
+	 </md-select>
+
+	<!--md-select mdTooltip = "Select the ceiling type for this roof" mdTooltipShowDelay = "500" placeholder="Ceiling type" [(ngModel)]="storeyRoofAndCeilingData[i].ceilingType" class = "typeSelector" name = "ceilingType{{i}}">
+		    <md-option *ngFor="let ceilingType of ceilingTypes;" [value]="ceilingType.value">
+		      	{{ceilingType.viewValue}}
+		    </md-option>
+	 </md-select-->
+
+	 <md-form-field style="width: 180px">
+	 <input mdInput type="number" placeholder="Ceiling insulation R-Value" name="ceilingInsulationRValue{{i}}" maxlength="3" min="0" max = "10" step = "0.1" [(ngModel)] = "storeyRoofAndCeilingData[i].ceilingInsulation">
+	 </md-form-field>
+
+	 <!--  <button md-raised-button mdTooltip = "Does this storey have multiple floor types? Use this!" mdTooltipShowDelay = "500" color="primary">
+		     Add floor type
+	</button> -->
+
+	<button md-mini-fab mdTooltip = "Delete this roof type" mdTooltipShowDelay = "500" color="warn" (click) = "deleteRoofType(i)">
+		<md-icon>delete</md-icon>
+	</button> 
+
+	</form>
+
+		<button md-raised-button color="primary" style="inline" (click)="addRoofType()">
+	    <md-icon>library_add</md-icon>
+	     Add roof type
+	</button> 
+
+	<div class="done-button">
+		<button md-raised-button color="primary">
+	    	<md-icon>save</md-icon>
+	     Save
+		</button> 
+	</div>

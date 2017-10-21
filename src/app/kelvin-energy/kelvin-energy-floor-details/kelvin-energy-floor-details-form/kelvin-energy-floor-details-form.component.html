@@ -1,5 +1,5 @@
 <form *ngFor = "let storey of storeyFloorData; let i = index;">
-    <md-select placeholder="Floor type" name ="typeSelector{{i}}" [(ngModel)]="storeyFloorData[i].floorTypes[0]">
+    <md-select placeholder="Floor type" name ="typeSelector{{i}}" [(ngModel)]="storeyFloorData[i].floorTypes[0]" class = "typeSelector">
         <md-option *ngFor="let floorType of floorTypes" [value]="floorType.value">
             {{floorType.viewValue}}
         </md-option>
