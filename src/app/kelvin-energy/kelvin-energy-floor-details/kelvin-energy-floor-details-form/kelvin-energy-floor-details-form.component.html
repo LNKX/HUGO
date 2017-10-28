@@ -13,13 +13,13 @@
 		     Add floor type
 	</button> -->
 
-	<md-select mdTooltip = "Select the type of floor insulation on this storey" mdTooltipShowDelay = "500" placeholder="Insulation" [(ngModel)]="storeyFloorData[i].insulationTypes[0]" class = "typeSelector" name = "floorInsulationType{{i}}">
+	<md-select *ngIf = "storeyFloorData[i].floorTypes[0] == 'suspendedTimber'|| storeyFloorData[i].floorTypes[0] == 'suspendedSlab'" mdTooltip = "Select the type of floor insulation on this storey" mdTooltipShowDelay = "500" placeholder="Insulation" [(ngModel)]="storeyFloorData[i].insulationTypes[0]" class = "typeSelector" name = "floorInsulationType{{i}}">
 		    <md-option *ngFor="let insulationType of insulationTypes;" [value]="insulationType.value">
 		      	{{insulationType.viewValue}}
 		    </md-option>
 	 </md-select>
 
-	 <md-form-field *ngIf = "storeyFloorData[i].insulationTypes[0] == 'batts'" style="width: 150px">
+	 <md-form-field *ngIf = "storeyFloorData[i].insulationTypes[0] == 'batts' && storeyFloorData[i].floorTypes[0] != 'concreteSlab' && storeyFloorData[i].floorTypes[0] != 'wafflePod'" style="width: 150px">
 	 <input mdInput type="number" placeholder="Batt R-Value" name="battRValue{{i}}" maxlength="5" min="0" max = "8" step = "0.5" [(ngModel)] = "storeyFloorData[i].battValue[0]">
 	 </md-form-field>
 

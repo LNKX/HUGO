@@ -1,3 +1,56 @@
-<p>
-  kelvin-energy-glazing-details-form works!
-</p>
+<md-select mdTooltip = "Select your glazing manufacturer. If you're not sure, use the Generic option" mdTooltipShowDelay = "500" placeholder="Glazing manufacturer" [(ngModel)]="projectGlazingDetails.glazingManufacturer" class = "typeSelector" name = "glazingManufacturerSelector{{i}}" >
+		    <md-option *ngFor="let glazingManufacturer of glazingManufacturers;" [value]="glazingManufacturer.value">
+		      	{{glazingManufacturer.viewValue}}
+		    </md-option>
+	 </md-select>
+
+<md-select mdTooltip = "Select the window frame type. Performance will vary among frame types, so its important to select the right one for your project" mdTooltipShowDelay = "500" placeholder="Frame type" [(ngModel)]="projectGlazingDetails.windowFrameType" class = "typeSelector" name = "windowFrameSelector{{i}}">
+		    <md-option *ngFor="let windowFrameType of windowFrameTypes;" [value]="windowFrameType.value">
+		      	{{windowFrameType.viewValue}}
+		    </md-option>
+</md-select>
+<!-- the index of storeyGlazingData is currently a placeholder until new storeys from the floor details section can be added-->
+<form *ngFor = "let window of storeyGlazingData[0].glazingRooms; let j = index;">
+   
+	<input style = "width:40px" type = "text" placeholder="ID" name="glazingIDinput{{j}}" maxlength="4" [(ngModel)] = "storeyGlazingData[0].glazingIDs[j]">
+    <md-select placeholder="Room / Area" name ="glazingRoomSelector{{j}}" [(ngModel)]="storeyGlazingData[0].glazingRooms[j]" class = "typeSelector">
+        <md-option *ngFor="let room of roomTypes" [value]="room.value">
+            {{room.viewValue}}
+        </md-option>
+     </md-select>
+
+	<md-select placeholder="Orientation" name ="glazingOrientationSelector{{j}}" [(ngModel)]="storeyGlazingData[0].glazingOrientations[j]" class = "typeSelector">
+        <md-option *ngFor="let orientation of orientationTypes" [value]="orientation.value">
+            {{orientation.viewValue}}
+        </md-option>
+     </md-select>
+
+     <md-select placeholder="Glazing type" name ="glazingTypeSelector{{j}}" [(ngModel)]="storeyGlazingData[0].glazingTypes[j]" class = "typeSelector">
+        <md-option *ngFor="let glazingType of glazingTypes" [value]="glazingType.value">
+            {{glazingType.viewValue}}
+        </md-option>
+     </md-select>
+     <md-form-field style = "width: 80px">
+	     <input mdInput type = "number" placeholder="Height" name="glazingHeightinput{{j}}" min = "0" step = "0.01" [(ngModel)] = "storeyGlazingData[0].glazingHeights[j]">
+	 </md-form-field>
+	 <md-form-field style = "width: 80px">
+	     <input mdInput type = "number" placeholder="Width" name="glazingWidthinput{{j}}" min = "0" step = "0.01" [(ngModel)] = "storeyGlazingData[0].glazingWidths[j]">
+ 	</md-form-field>
+ 	<md-form-field style = "width: 80px">
+	     <input mdInput type = "number" placeholder="Projection" name="glazingProjectioninput{{j}}" min = "0" step = "0.01" [(ngModel)] = "storeyGlazingData[0].glazingProjections[j]">
+ 	</md-form-field>
+ 	<md-form-field style = "width: 80px">
+	     <input mdInput type = "number" placeholder="Projection height" name="glazingProjectionHeightinput{{j}}" min = "0" step = "0.01" [(ngModel)] = "storeyGlazingData[0].glazingProjectionHeights[j]">
+ 	 </md-form-field>
+     
+	<button md-mini-fab (click) = "deleteWindow(j)"><md-icon>delete</md-icon></button>
+
+ </form>
+<button md-raised-button color="primary" (click) = "addWindow()"> <md-icon>library_add</md-icon> Add Window</button>
+
+	<div class="done-button">
+		<button md-raised-button color="primary" (click) = "debugFunction()">
+	    	<md-icon>save</md-icon>
+	     Save
+		</button> 
+	</div>

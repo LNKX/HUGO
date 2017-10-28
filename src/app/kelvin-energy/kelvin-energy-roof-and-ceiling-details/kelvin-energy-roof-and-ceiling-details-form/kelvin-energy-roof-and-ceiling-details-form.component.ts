@@ -36,6 +36,9 @@ export class KelvinEnergyRoofAndCeilingDetailsFormComponent implements OnInit {
 		{value: 'raked', viewValue: 'Raked'},
 		{value: 'cathedral', viewValue: 'Cathedral (15-45 degrees)'},
 	];
+
+	skylights = false;
+
 	addRoofType(){
 
 		this.storeyRoofAndCeilingData.push({roofCladding:'', roofColour: '', roofInsulation:'', ceilingType: '', ceilingInsulation:''});

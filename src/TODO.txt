@@ -1,3 +1,16 @@
 Save button needs to close tray, export variables for updating. 
 
-check floorType/s on floor details html. Its different syntax to whats on the ngfor above it. Could that have been the problem?
+
+
+
+
+	 calculateDTSFloors(){};
+	 calculateDTSWalls(){};
+	 calculateDTSRoofAndCeilings(){};
+	 adviceGlazing(){};
+	 adviceFlooring(){};
+	 adviceWalls(){};
+	 adviseRoofAndCeilings(){};
+
+
+ENTER BUTTON DEFAULTS TO DELETE ICON :/ NEED TO PROTECT AGAINST THAT

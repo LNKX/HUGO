@@ -28,7 +28,7 @@ export class KelvinEnergyFloorDetailsFormComponent implements OnInit {
 
 	storeyFloorData = [{floorTypes: [],floorAreas:[], insulationTypes:[], battValue: []}];
 
-
+	
 	trackByFn(index){
 	 return index;
 	}

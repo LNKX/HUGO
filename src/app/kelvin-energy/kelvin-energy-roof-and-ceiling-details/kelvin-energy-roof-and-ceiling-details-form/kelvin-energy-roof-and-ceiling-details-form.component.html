@@ -27,21 +27,23 @@
 	 <input mdInput type="number" placeholder="Ceiling insulation R-Value" name="ceilingInsulationRValue{{i}}" maxlength="3" min="0" max = "10" step = "0.1" [(ngModel)] = "storeyRoofAndCeilingData[i].ceilingInsulation">
 	 </md-form-field>
 
-	 <!--  <button md-raised-button mdTooltip = "Does this storey have multiple floor types? Use this!" mdTooltipShowDelay = "500" color="primary">
-		     Add floor type
-	</button> -->
+
+
 
 	<button md-mini-fab mdTooltip = "Delete this roof type" mdTooltipShowDelay = "500" color="warn" (click) = "deleteRoofType(i)">
 		<md-icon>delete</md-icon>
 	</button> 
 
 	</form>
+	
 
 		<button md-raised-button color="primary" style="inline" (click)="addRoofType()">
 	    <md-icon>library_add</md-icon>
 	     Add roof type
 	</button> 
-
+<div>
+	<md-checkbox [(ngModel)]="skyLights" name = "skylightsCheckbox{{i}}">Skylights used</md-checkbox>
+</div>
 	<div class="done-button">
 		<button md-raised-button color="primary">
 	    	<md-icon>save</md-icon>
